@@ -1,19 +1,5 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.wait import WebDriverWait
 import random
 import string
-
-
-@pytest.fixture
-def browser():
-    chrome_options = Options()
-    chrome_options.add_argument("--start-maximized")
-    driver = webdriver.Chrome(options=chrome_options)
-    driver.implicitly_wait(10)
-    yield driver
-    driver.quit()
-
 
 def generate_email():
     username = ''.join(random.choices(string.ascii_lowercase + string.digits, k=8))

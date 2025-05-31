@@ -1,3 +1,6 @@
+import pytest
+from page_objects.locators import BaseLocators, RegistrationLocators
+
 class TestLogin:
     def test_login_from_main(self, browser):
         browser.get("https://stellarburgers.nomoreparties.site/")

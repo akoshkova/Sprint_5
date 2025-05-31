@@ -9,19 +9,19 @@
 
 ## Структура проекта
 ```
-stellar_burgers_tests/
+Sprint_5/
 ├── README.md
+├── generator_data
 ├── .gitignore
 ├── page_objects/
 │ └── locators.py
-├── fixtures/
-│ └── conftest.py
 └── tests/
- ├── test_registration.py
- ├── test_login.py
- ├── test_profile.py
- ├── test_logout.py
- └── test_constructor.py
+  ├── conftest.py
+  ├── test_registration.py
+  ├── test_login.py
+  ├── test_profile.py
+  ├── test_logout.py
+  └── test_constructor.py
 ```
 
 ## Используемые технологии
@@ -66,7 +66,7 @@ stellar_burgers_tests/
 
 ## История изменений
 * 30.05.2025 - Создание проекта
-* [дата] - [изменения]
+* 31.05.2025 - Редактирование
 * [дата] - [изменения]
 
 ## Примечания

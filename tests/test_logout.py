@@ -1,3 +1,6 @@
+import pytest
+from page_objects.locators import BaseLocators, ProfileLocators, RegistrationLocators
+
 class TestLogout:
     def test_logout(self, browser):
         browser.get("https://stellarburgers.nomoreparties.site/")

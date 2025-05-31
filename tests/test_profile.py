@@ -1,3 +1,6 @@
+import pytest
+from page_objects.locators import BaseLocators, RegistrationLocators
+
 class TestProfile:
     def test_profile_access(self, browser):
         browser.get("https://stellarburgers.nomoreparties.site/")
