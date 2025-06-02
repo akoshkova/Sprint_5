@@ -39,3 +39,7 @@ def generate_password_with_length(length=8):
 
     random.shuffle(password_chars)
     return ''.join(password_chars)
+
+def generate_name():
+    length = random.randint(3, 10)  # длина имени от 3 до 10 букв
+    return ''.join(random.choices(string.ascii_lowercase, k=length)).capitalize()

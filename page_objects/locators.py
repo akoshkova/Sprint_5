@@ -1,34 +1,42 @@
 from selenium.webdriver.common.by import By
 
 class BaseLocators:
-    # Основные элементы главной страницы
-    LOGIN_BUTTON = (By.XPATH, "//button[contains(text(), 'Войти в аккаунт')]")  # Кнопка входа
-    PROFILE_BUTTON = (By.XPATH, "//button[contains(text(), 'Личный кабинет')]")  # Кнопка профиля
-    CONSTRUCTOR_BUTTON = (By.XPATH, "//button[contains(text(), 'Конструктор')]")  # Кнопка конструктора
-    REGISTER_BUTTON = (By.XPATH, "//button[contains(text(), 'Регистрация')]")  # Кнопка регистрации
-    FORGOT_PASSWORD_BUTTON = (By.XPATH, "//a[contains(text(), 'Восстановить пароль')]")  # Кнопка восстановления пароля
+    LOGIN_BUTTON = (By.CSS_SELECTOR, ".auth__button_login")  # Кнопка входа
+    PROFILE_BUTTON = (By.CSS_SELECTOR, ".profile")  # Кнопка профиля
+    CONSTRUCTOR_BUTTON = (By.CSS_SELECTOR, ".constructor")  # Кнопка конструктора
+    REGISTER_BUTTON = (By.CSS_SELECTOR, ".auth__button_registration")  # Кнопка регистрации
+    FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, ".auth__password_reset")  # Кнопка восстановления пароля
 
 class RegistrationLocators:
-    # Форма регистрации
-    NAME_INPUT = (By.XPATH, "//input[@placeholder='Имя']")  # Поле имени
-    EMAIL_INPUT = (By.XPATH, "//input[@placeholder='Логин']")  # Поле email
-    PASSWORD_INPUT = (By.XPATH, "//input[@placeholder='Пароль']")  # Поле пароля
-    REGISTER_BUTTON = (By.XPATH, "//button[contains(text(), 'Регистрация')]")  # Кнопка регистрации
+    NAME_INPUT = (By.ID, "name")  # Поле имени
+    EMAIL_INPUT = (By.ID, "email")  # Поле email
+    PASSWORD_INPUT = (By.ID, "password")  # Поле пароля
+    REGISTER_BUTTON = (By.CSS_SELECTOR, ".registration__button")  # Кнопка регистрации
 
 class ProfileLocators:
-    # Личный кабинет
-    LOGOUT_BUTTON = (By.XPATH, "//button[contains(text(), 'Выйти')]")  # Кнопка выхода
+    LOGOUT_BUTTON = (By.CSS_SELECTOR, ".profile__button_logout")  # Кнопка выхода
 
 class ConstructorLocators:
-    # Конструктор
-    BUNS_BUTTON = (By.CSS_SELECTOR, ".buns-button") # Кнопка булок
-    SAUCES_BUTTON = (By.CSS_SELECTOR, ".sauces-button") # Кнопка соусов
-    FILLINGS_BUTTON = (By.CSS_SELECTOR, ".fillings-button") # Кнопка начинок
+    # Локаторы для вкладок
+    BUNS_BUTTON = (By.CSS_SELECTOR, ".tabs__tab_buns")  # Кнопка булок
+    SAUCES_BUTTON = (By.CSS_SELECTOR, ".tabs__tab_sauces")  # Кнопка соусов
+    FILLINGS_BUTTON = (By.CSS_SELECTOR, ".tabs__tab_fillings")  # Кнопка начинок
+
+    # Локаторы для контента вкладок
+    BUNS_CONTENT = (By.CSS_SELECTOR, ".buns")  # Контент-блок с булками
+    SAUCES_CONTENT = (By.CSS_SELECTOR, ".sauces")  # Контент-блок с соусами
+    FILLINGS_CONTENT = (By.CSS_SELECTOR, ".fillings")  # Контент-блок с начинками
+
+    # Локаторы для элементов контента
+    BUN_ITEM = (By.CSS_SELECTOR, ".ingredient")  # Элемент списка булок
+    SAUCE_ITEM = (By.CSS_SELECTOR, ".ingredient")  # Элемент списка соусов
+    FILLING_ITEM = (By.CSS_SELECTOR, ".ingredient")  # Элемент списка начинок
+
+    # Общий локатор для активного таба
+    ACTIVE_TAB = (By.CSS_SELECTOR, ".tabs__tab_active")  # Активный таб на странице
 
 class ErrorMessages:
-    # Сообщения об ошибках
-    EMPTY_NAME_ERROR = (By.XPATH, "//p[contains(text(), 'Это поле обязательно')]")  # Ошибка пустого имени
-    INVALID_EMAIL_ERROR = (By.XPATH, "//p[contains(text(), 'Неверный формат email')]")  # Ошибка неверного email
-    SHORT_PASSWORD_ERROR = (By.XPATH, "//p[contains(text(), 'Минимальная длина пароля 6 символов')]")  # Ошибка короткого пароля
-
-
+    EMPTY_NAME_ERROR = (By.CSS_SELECTOR, ".input__error")  # Ошибка пустого имени
+    INVALID_EMAIL_ERROR = (By.CSS_SELECTOR, ".input__error")  # Ошибка неверного email
+    SHORT_PASSWORD_ERROR = (By.CSS_SELECTOR, ".input__error")  # Ошибка короткого пароля
+    REGISTRATION_ERROR = (By.CSS_SELECTOR, ".input__error")
