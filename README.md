@@ -13,10 +13,12 @@ Sprint_5/
 ├── README.md
 ├── generator_data
 ├── .gitignore
+├── conftest.py
 ├── page_objects/
+│ ├── registration_page.py
+│ ├── constructor_page.py
 │ └── locators.py
 └── tests/
-  ├── conftest.py
   ├── test_registration.py
   ├── test_login.py
   ├── test_profile.py
@@ -67,7 +69,8 @@ Sprint_5/
 ## История изменений
 * 30.05.2025 - Создание проекта
 * 31.05.2025 - Редактирование
-* [дата] - [изменения]
+* 02.06.2025 - Редактирование
+* 03.06.2025 - Редактирование
 
 ## Примечания
 * Все тесты автономны и не зависят друг от друга
